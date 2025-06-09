@@ -3,22 +3,28 @@ import {
   UpdateUserRequest, 
   UserResponse 
 } from '../interfaces/user-interface';
+import { UserRepository } from '../repositories/user-repository';
 
 export class UserService implements IUserService {
 
+  constructor(private readonly userRepository: UserRepository) {}
+
   async findById(id: string): Promise<UserResponse | null> {
-    // TODO: Implementar busca por ID
-    throw new Error('Method not implemented');
+    const user = await this.userRepository.findById(id);
+
+    return user;
   }
 
   async findByEmail(email: string): Promise<UserResponse | null> {
-    // TODO: Implementar busca por email
-    throw new Error('Method not implemented');
+    const user = await this.userRepository.findByEmail(email);
+
+    return user;
   }
 
   async findAll(): Promise<UserResponse[]> {
-    // TODO: Implementar listagem de usuários
-    throw new Error('Method not implemented');
+    const users = await this.userRepository.findAll();
+
+    return users;
   }
 
   async update(id: string, data: UpdateUserRequest): Promise<UserResponse> {
