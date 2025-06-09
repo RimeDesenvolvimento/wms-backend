@@ -1,9 +1,10 @@
 import express, { Request, Response } from "express";
+import { app } from "./app";
+import { setupRoutes } from "./routes/routes";
 
-const app = express();
+setupRoutes(app);
 
 app.use(express.json());
-
 app.get("/", (req: Request, res: Response) => {
   res.json({ message: "Hello World WMS API" });
 });
