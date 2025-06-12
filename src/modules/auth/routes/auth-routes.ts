@@ -13,7 +13,7 @@ const authService = new AuthService(userService, authRepository);
 const authController = new AuthController(authService);
 
 router.post('/login', (req, res) => authController.login(req, res));
-router.post('/register', (req, res) => authController.register(req, res));
-router.put('/refresh', (req, res) => authController.refreshToken(req, res));
+//router.post('/register', (req, res) => authController.register(req, res));
+//router.put('/refresh', (req, res) => authController.refreshToken(req, res));
 
 export { router as authRoutes }; 
