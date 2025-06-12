@@ -1,10 +1,13 @@
+import { Role } from "@prisma/client";
+
 export interface User {
   id: string;
   email: string;
   name: string;
+  password: string;
   createdAt: Date;
   updatedAt: Date;
-  role: string;
+  role: Role;
 }
 
 export interface UpdateUserRequest {
@@ -19,7 +22,7 @@ export interface UserResponse {
   name: string;
   createdAt: Date;
   updatedAt: Date;
-  role: string;
+  role: Role;
 }
 
 export interface IUserService {
