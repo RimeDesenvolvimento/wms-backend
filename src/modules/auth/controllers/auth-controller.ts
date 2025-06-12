@@ -27,7 +27,7 @@ export class AuthController {
     }
   }
 
-  async register(req: Request, res: Response): Promise<void> {
+  /* async register(req: Request, res: Response): Promise<void> {
     try {
       const validatedData = RegisterSchema.parse(req.body);
       const result = await this.authService.register(validatedData);
@@ -70,4 +70,5 @@ export class AuthController {
       res.status(401).json(response);
     }
   }
+  */
 } 
